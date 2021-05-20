@@ -1,122 +1,135 @@
-# How to deploy your Flask app to Azure (with example)
+# Are You In
 
-This tutorial will show you, how to deploy your Flask app to Azure App Service.
+<img src="Design.png"
+     alt="Design"
+     style="float: center; margin-right: 10px;" />
 
-## What is Azure App Service?
+Market Product:
+Our Offerings: Are You In is a website that allows you to discover the best in events travel ann food in Bloomington and nearby Indianapolis areas. We strive to curate experiences that are worth your time and money , possibly something you’ve never tried before. We help you meet new people from your neighborhood, gather for brunches and book clubs.
+Use our search tools to fin new friends. You can also publicly query for event of your liking and find people to hang out with, in this unsocial age, you can find your kind with the click of a button. . The approach tends to the needs of venue owners looking to rent out their property, hosts looking to hold experiences and students looking to network or socialize.
 
-It's a hosting provider (cloud) by Microsoft, similar to Google's App Engine.
+As a Project:
+A Website with the following features:
+- Register as a Member
+- Add Events
+- Create Content
+- Register for Events
+- Chat with Other Members
+- Posts and Discussions
 
-## Deployment steps
+## Built With
 
-### Prepare your Flask app
+- [NodeJs](https://nodejs.org/en/)
+- [ReactJS](https://reactjs.org/ )
+- [Bootstrap](https://getbootstrap.com/ )
+- [MongoDB](https://www.mongodb.com/ )
+- Blood,Sweat and Tears 
 
-First create a your Flask project on your computer (if you haven't yet).
+## Getting Started
 
-You can copy the code from this repository. At minimum, the Flask project needs to have:
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-- **One Python file:** ours is called main.py. See the code that it contains.
-- **The requirements.txt file:** This file contains the list of Python (PIP) libraries that the project depends on. In 
-our case it depends on Flask.
+### Prerequisites
 
-### Push to GitHub
+For development, you will only need Node.js installed on your environement. And please use the appropriate Editorconfig plugin for your Editor (not mandatory).
+Node is really easy to install & now include NPM. You should be able to run the following command after the installation procedure below.
 
-Create a repository on your GitHub account and push this code to it. We will use GitHub to deploy the project to Azure later.
+```
+$ node --version
+v0.10.24
 
-### Create an account on Azure
+$ npm --version
+1.3.21
+```
 
-Go to this URL: [https://azure.microsoft.com/en-us/free/](https://azure.microsoft.com/en-us/free/) and create a free 
-Microsoft Azure account for yourself.
+Node installation on OS X
+You will need to use a Terminal. On OS X, you can find the default terminal in /Applications/Utilities/Terminal.app.
 
-You will also be asked to provide your credit card info, but this is only to verify your identity and an anti-spam 
-measure. Your credit card will not be charged as long as you use the free Azure services (as we'll do in our tutorial).
+Please install Homebrew if it's not already done with the following command.
+```
+$ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+```
 
-### Create an App Service
+If everything when fine, you should run
+```
+brew install node
+```
 
-Once you have your Azure account ready, you can log into the Azure dashboard and create your first App Service. This is 
-similar to a GAE project on Google Cloud.
+Node installation on Linux
 
-**Step 1:**
+```
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs
+```
 
-![](img/create-app-service-1.png)
+Node installation on Windows
 
-**Step 2:**
+Just go on official Node.js website & grab the installer. Also, be sure to have git available in your PATH, npm might need it.
 
-![](img/create-app-service-2.png)
+### Clone
 
-**Step 3:**
+Clone this repo to your local machine using git clone https://github.iu.edu/nayshaik/IUIn.git
+$ cd iuin
+### Installing
 
-![](img/create-app-service-3.png)
 
-**Step 4:**
 
-![](img/create-app-service-4.png)
+```
+git clone https://github.iu.edu/nayshaik/IUIn.git
+$ cd iuin
+$ npm install
+$ cd client
+$ npm install
+```
 
-### Wait for the App Service to be created
+### Start & watch
 
-Wait a minute or two that Azure creates a new App Service project for you. You can see the progress in the upper right 
-corner (click on the bell icon):
+For running only the front end 
 
-**In progress:**
 
-![](img/app-service-created-1.png)
+``` 
+npm start 
+```
 
-**Success:**
+For running the front and the backend:
+``` 
+npm run dev 
+```
 
-![](img/app-service-created-2.png)
+### Update sources
 
-Click on **Go to resource** now.
+Some packages usages might change so you should run npm prune & npm install often. A common way to update is by doing. You might also need to add npm audit --f in some cases.
 
-### App Services list
 
-Go to the App Services tab, where you can see your new web app listed (click on it):
+### Languages & tools
 
-![](img/app-services-list.png)
+- HTML 
+- Bootstrap 
+- JavaScript 
+- React Js framwork 
+- es6ify 
+- React is used for UI
+- CSS
 
-Click on the URL for your new website:
 
-![](img/browse-website-1a.png)
+## Contribution
 
-This will open a new tab in your browser and show you your web app:
+- [Prafull chavan](https://github.com/Prafull-chavan)
+- Shubham Rane
+- Chaitanya Aayre
+- Nayeemullah Baig
 
-![](img/browse-website-2.png)
 
-Right now there's some text by Microsoft on it, but your Flask app is not there yet. Let's get it deployed on Azure.
+## License
 
-### Connect your GitHub account to Azure
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-In order to deploy your Flask app on Azure, you'll need to connect your GitHub account to it. Go to **Deployment Center** 
-tab and follow these steps:
+## Contribute
 
-**Step 1:** Click on GitHub and authorize your GitHub account.
-
-![](img/deployment-1.png)
-
-**Step 2:** Select App Service Kudu Build Service.
-
-![](img/deployment-2.png)
-
-**Step 3:** Choose your Flask repository.
-
-![](img/deployment-3.png)
-
-**Step 4:**
-
-![](img/deployment-4.png)
-
-**Step 5:** Your GitHub code has been deployed to Azure
-
-![](img/deployment-5.png)
-
-### One last thing
-
-Since your Python file in your Flask project is named main.py, Azure does not recognize it automatically. If you would 
-name it application.py, you wouldn't need to do this last step.
-
-So the last step is to go to the **Application settings** and add the following line into the Startup file input box:
-
-    gunicorn --bind=0.0.0.0 --timeout 600 main:app
-
-![](img/startup-file.png)
-
-Now go check your webiste URL (you'll probably need to refresh it a couple of times). It should show the 
-"Hello, SmartNinja!" text.
+- Fork it! :D
+- Create your feature branch: git checkout -b my-new-feature
+- Commit your changes: git commi qt -am 'Add some feature'
+- Push to the branch: git push origin my-new-feature
+- Submit a pull request :D
